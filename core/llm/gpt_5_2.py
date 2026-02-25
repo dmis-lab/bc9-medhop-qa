@@ -4,7 +4,6 @@ import re
 from openai import OpenAI
 import time
 
-API_KEY = ""
 BATCH_INPUT_PATH = "./gpt_5.2_batch_input_file.jsonl"
 BATCH_OUTPUT_PATH = "./gpt5.2_batch_outputput_file.jsonl"
 
@@ -12,7 +11,7 @@ class GPT5_2():
     def __init__(self, effort='none', verbosity='medium'):
         self.model_name = 'gpt-5.2'
 
-        self.client = OpenAI(api_key=API_KEY)
+        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
         self.id = 0
         self.effort = effort
         self.verbosity = verbosity

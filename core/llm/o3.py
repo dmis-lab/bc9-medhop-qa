@@ -4,7 +4,6 @@ import re
 from openai import OpenAI
 import time
 
-API_KEY = ""
 BATCH_INPUT_PATH = "/home02/d002a03/yein/workspace/medhopqa/jongmyung/test/batch_input_file.jsonl"
 BATCH_OUTPUT_PATH = "/home02/d002a03/yein/workspace/medhopqa/jongmyung/test/batch_outputput_file.jsonl"
 
@@ -12,7 +11,7 @@ class O3():
     def __init__(self):
         self.model_name = 'o3'
 
-        self.client = OpenAI(api_key=API_KEY)
+        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
         self.id = 0
 
     def generate_response(self, system_message, user_prompts):

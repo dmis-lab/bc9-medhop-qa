@@ -4,7 +4,6 @@ import re
 from openai import OpenAI
 import time
 
-API_KEY = ""
 BATCH_INPUT_PATH = "./gpt4o_batch_input_file.jsonl"
 BATCH_OUTPUT_PATH = "./gpt4o_batch_outputput_file.jsonl"
 
@@ -12,7 +11,7 @@ class GPT4o():
     def __init__(self):
         self.model_name = 'gpt-4o'
 
-        self.client = OpenAI(api_key=API_KEY)
+        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
         self.id = 0
 
     def generate_response(self, system_message, user_prompts):
