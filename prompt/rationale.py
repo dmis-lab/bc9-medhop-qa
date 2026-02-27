@@ -25,8 +25,8 @@ You are given multiple retrieved documents as reference context.
      - Carpenter's → Carpenter's syndrome
      - NPH → Normal Pressure Hydrocephalus
    • For yes/no questions, reply **exactly** Yes or No.
-4. "You are strongly required to follow the specified output format; "
-    "conclude your response with the phrase \"Therefore the answer is [ANSWER].\".\n\n"""
+4. You are strongly required to follow the specified output format;
+    conclude your response with the phrase \"Therefore the answer is [ANSWER].\".\n\n"""
 
     @staticmethod
     def get_answer_user_prompt(question, retrieved_context):
